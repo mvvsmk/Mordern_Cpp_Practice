@@ -1,0 +1,36 @@
+name: Remark
+
+on:
+  push:
+    branches:
+      -main
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  remark:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Setup
+    - name: Checkout
+      uses: actions/checkout@v2.3.3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v1.4.4
+
+    - name: Install remark
+      run: npm install remark-cli remark-lint remark-lint-maximum-line-length remark-preset-lint-recommended
+
+    # Run
+    - name: Check *.md files
+      run:  git ls-files *.md | xargs -I {} ./node_modules/.bin/remark {} -u lint -f > /dev/null
+      
+    - name: Check */*.md files
+      run:  git ls-files */*.md | xargs -I {} ./node_modules/.bin/remark {} -u lint -f > /dev/null
+      
+    - name: Check */*/*.md files
+      run:  git ls-files */*/*.md | xargs -I {} ./node_modules/.bin/remark {} -u lint -f > /dev/null
+    
+    - name: Check */*/*/*.md files
+      run:  git ls-files */*/*/*.md | xargs -I {} ./node_modules/.bin/remark {} -u lint -f > /dev/null
