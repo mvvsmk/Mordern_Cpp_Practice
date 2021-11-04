@@ -30,10 +30,6 @@ jobs:
     - name: Check *.md files
       run: git ls-files '*.md' | xargs npx remark -q -f -u lint > /dev/null
 
-  # These jobs doesn't actually test anything, but they're only used to tell
-  # bors the build completed, as there is no practical way to detect when a
-  # workflow is successful listening to webhooks only.
-  #
   # ALL THE PREVIOUS JOBS NEED TO BE ADDED TO THE `needs` SECTION OF THIS JOB!
 
   end-success:
