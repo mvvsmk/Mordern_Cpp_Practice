@@ -6,7 +6,7 @@ This is also a test to see if my linting automation is working
 
 The code below this line is just present to test the linter
 
-This line is simply not tooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+This line is simply not tooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 long.
 
 Just like thiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiis one.
